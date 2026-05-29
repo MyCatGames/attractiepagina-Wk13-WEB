@@ -297,6 +297,10 @@ main {
     background-color: #2dbf68;
 }
 
+.attractie-kaart:has(.fast-pass-btn) {
+    grid-column: span 2;
+}
+
 
 
 

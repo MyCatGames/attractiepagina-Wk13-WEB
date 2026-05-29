@@ -48,7 +48,7 @@ $attracties = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="attractie-info-rechts">
                     <p class="beschrijving"><?php echo $attractie['description']; ?></p>
                     <?php if($attractie['fast_pass']): ?>
-                        <button class="fast-pass-btn">🎟️ FAST PASS</button>
+                        <button class="fast-pass-btn">FAST PASS</button>
                     <?php endif; ?>
                 </div>
             </article>
