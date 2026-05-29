@@ -46,11 +46,11 @@ if(!isset($_SESSION['user_id']))
 
             <div class="form-group">
                 <label for="title">Titel:</label>
-                <input type="text" name="title" id="title" class="form-input" value="<?php echo $ride['title']; ?>">
+                <input type="text" name="title" id="title" class="form-input" value="<?php echo $ride['title']; ?>" required>
             </div>
             <div class="form-group">
                 <label for="themeland">Themagebied:</label>
-                <select name="themeland" id="themeland" class="form-input">
+                <select name="themeland" id="themeland" class="form-input" required>
                     <option value=""> - kies een optie - </option>
                     <option value="familyland" <?php if($ride['themeland'] == 'familyland') echo 'selected'; ?>>Familyland</option>
                     <option value="waterland" <?php if($ride['themeland'] == 'waterland') echo 'selected'; ?>>Waterland</option>

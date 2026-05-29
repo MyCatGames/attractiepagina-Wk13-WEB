@@ -35,11 +35,11 @@ if(!isset($_SESSION['user_id']))
         
             <div class="form-group">
                 <label for="title">Titel:</label>
-                <input type="text" name="title" id="title" class="form-input">
+                <input type="text" name="title" id="title" class="form-input" required>
             </div>
             <div class="form-group">
                 <label for="themeland">Themagebied:</label>
-                <select name="themeland" id="themeland" class="form-input">
+                <select name="themeland" id="themeland" class="form-input" required>
                     <option value=""> - kies een optie - </option>
                     <option value="familyland">Familyland</option>
                     <option value="waterland">Waterland</option>
