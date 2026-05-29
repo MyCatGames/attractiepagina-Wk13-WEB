@@ -32,11 +32,14 @@ if(!isset($_SESSION['user_id']))
 
         <?php
         require_once '../backend/conn.php';
-        $query = "SELECT * FROM rides";
+        $query = "SELECT * FROM rides ORDER BY title ASC";
         $statement = $conn->prepare($query);
         $statement->execute();
         $rides = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $aantal = count($rides);
         ?>
+
+        <p><strong>De lijst bevat <?php echo $aantal; ?> attractie<?php echo $aantal != 1 ? 's' : ''; ?></strong></p>
 
         <table>
             <tr>
@@ -44,13 +47,15 @@ if(!isset($_SESSION['user_id']))
                 <th>Themagebied</th>
                 <th>Min. lengte</th>
                 <th>Fastpass</th>
+                <th>Acties</th>
             </tr>
+            <?php $counter = 0; ?>
             <?php foreach($rides as $ride): ?>
-                <tr>
+                <tr <?php echo ($counter++ % 2 == 0) ? 'class="alt"' : ''; ?>>
                     <td><?php echo $ride['title']; ?></td>
-                    <td><?php echo $ride['themeland']; ?></td>
-                    <td><?php echo $ride['min_length']; ?></td>
-                    <td><?php echo $ride['fast_pass']; ?></td>
+                    <td><?php echo ucfirst(str_replace('land', 'land', $ride['themeland'])); ?></td>
+                    <td><?php echo $ride['min_length'] ? $ride['min_length'] . ' cm' : '-'; ?></td>
+                    <td><?php echo $ride['fast_pass'] ? 'Ja' : 'Nee'; ?></td>
                     <td><a href="edit.php?id=<?php echo $ride['id']; ?>">aanpassen</a></td>
                 </tr>
             <?php endforeach; ?>

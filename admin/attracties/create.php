@@ -47,6 +47,14 @@ if(!isset($_SESSION['user_id']))
                 </select>
             </div>
             <div class="form-group">
+                <label for="description">Beschrijving:</label>
+                <textarea name="description" id="description" class="form-input" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="min_length">Minimale lengte (cm):</label>
+                <input type="number" name="min_length" id="min_length" class="form-input">
+            </div>
+            <div class="form-group">
                 <label for="img_file">Afbeelding:</label>
                 <input type="file" name="img_file" id="img_file" class="form-input">
             </div>
